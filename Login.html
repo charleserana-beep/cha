@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         * {
             box-sizing: border-box;
@@ -9,56 +10,91 @@
         }
         body {
             margin: 0;
+            padding: 0;
             height: 100vh;
+            width: 100vw;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url("11.jpg");
+            /* BACKGROUND PICTURE KEPT EXACTLY THE SAME */
+            background: url("11.jpg") no-repeat center center fixed;
             background-size: cover;
-            background-position: center;
+            overflow: hidden; /* Disables unwanted scrollbars */
         }
+        
+        /* Glass wrapper panel stretched to cover the entire screen */
         .login-box {
-            width: 350px;
-            padding: 35px;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.4);
-            border-radius: 15px;
+            width: 100%;
+            height: 100vh;
+            padding: 40px;
+            
+            /* Full-screen glass overlay style matching your site theme */
+            background: rgba(0, 0, 0, 0.55); /* Tinted slightly darker to keep input fields crisp */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            
+            /* Removed structural outer borders/radius to achieve edge-to-edge finish */
+            border: none;
+            border-radius: 0;
+            
+            /* Center align the internal login elements layout block */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
             color: white;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+            box-shadow: none;
         }
-        /* Style for your new logo */
+        
+        /* Form wrapper to lock input element sizing inside the full-screen layout */
+        form {
+            width: 100%;
+            max-width: 360px; /* Keeps the login inputs comfortably sized in the screen center */
+        }
+        
         .login-logo {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.4);
         }
+        
         h1 {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             margin-top: 0;
-            font-size: 24px;
+            font-size: 28px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
+        
         input {
             width: 100%;
-            padding: 13px;
-            margin: 10px 0;
-            background: rgba(255,255,255,0.2);
-            border: 1px solid rgba(255,255,255,0.5);
+            padding: 14px;
+            margin: 12px 0;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 8px;
             color: white;
             outline: none;
+            font-size: 15px;
+            transition: border-color 0.2s, background 0.2s;
         }
+        
+        input:focus {
+            border-color: orange;
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
         input::placeholder {
-            color: white;
+            color: rgba(255, 255, 255, 0.8);
         }
+        
         button {
             width: 100%;
-            padding: 13px;
-            margin-top: 15px;
+            padding: 14px;
+            margin-top: 20px;
             background: white;
             color: black;
             border: none;
@@ -66,13 +102,19 @@
             cursor: pointer;
             font-size: 16px;
             font-weight: bold;
+            transition: background 0.2s, color 0.2s;
+        }
+        
+        button:hover {
+            background: orange;
+            color: white;
         }
     </style>
 </head>
 <body>
     <div class="login-box">
-        <!-- Logo added here. Replace 'logo.png' with your actual image path -->
-        <img src="111.jpg" alt="Logo" class="login-logo" onerror="this.src='https://www.google.com/imgres?q=logo%20of%20cooking&imgurl=https%3A%2F%2Ft4.ftcdn.net%2Fjpg%2F19%2F32%2F70%2F21%2F360_F_1932702158_ZlrlO4IbOc0qJcu1FNMb0SjSUgg7cfAY.jpg&imgrefurl=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3D%2522cook%2Blogo%2522&docid=J9TNn9zOZx1QmM&tbnid=IKPWHVtEs54fZM&vet=12ahUKEwjjwP_7j9KWAxUmklYBHSuWBBsQnPAOegQIRBAA..i&w=373&h=360&hcb=2&ved=2ahUKEwjjwP_7j9KWAxUmklYBHSuWBBsQnPAOegQIRBAA'">
+        <!-- Logo structure optimized with clean layout sizing -->
+        <img src="111.jpg" alt="Logo" class="login-logo" onerror="this.src='https://ftcdn.net'">
         
         <h1>🔒Char Shop🔑</h1>
         <form onsubmit="login(event)">
@@ -81,8 +123,8 @@
             <button type="submit">Login</button>
         </form>
     </div>
+    
     <script>
-	
         function login(event) {
             event.preventDefault();
             let username = document.getElementById("username").value;
