@@ -3,94 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>About Us</title>
+
     <style>
-        body { 
-            margin: 0; 
-            font-family: Arial, sans-serif; 
-            background: #f4f4f4; 
-        }
-        
-        nav { 
-            background: orange; 
-            padding: 18px; 
-            text-align: center; 
-        }
-        
-        nav a { 
-            color: white; 
-            text-decoration: none; 
-            margin: 15px; 
-            font-weight: bold; 
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
         }
 
-        /* Updated container with background image and overlay */
-        .home { 
-            min-height: calc(100vh - 56px); /* Adjusts for the navbar height */
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            text-align: center; 
-            /* Adds a dark overlay blend over a cinematic background image */
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('17.jpg') no-repeat center center/cover;
-            color: white; 
-            padding: 20px;
+        nav {
+            background: orange;
+            padding: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-greeting {
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: auto;
+            padding-left: 15px;
+        }
+
+        /* Main section */
+        .home {
+            min-height: calc(100vh - 56px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.7),
+                rgba(0, 0, 0, 0.7)
+            ),
+            url('17.jpg') no-repeat center center/cover;
+
+            color: white;
+            padding: 40px 20px;
             box-sizing: border-box;
         }
 
-        /* Stylized white transparent box containing the text */
+        /* Content box */
         .content-container {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(8px);
-            padding: 40px;
+            padding: 35px;
+            border-radius: 15px;
+            max-width: 850px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Picture inside the page */
+        .about-image {
+            width: 100%;
+            max-width: 700px;
+            height: 300px;
+            object-fit: cover;
             border-radius: 12px;
-            max-width: 800px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            display: block;
+            margin: 0 auto 30px auto;
+
+            border: 3px solid white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
         }
 
-        /* Title positioned squarely above the paragraph */
-        .home h1 { 
-            font-size: 45px; 
-            margin-top: 0;
+        /* Picture caption */
+        .image-caption {
+            font-size: 15px;
+            color: #eeeeee;
+            margin-top: -20px;
+            margin-bottom: 25px;
+        }
+
+        .home h1 {
+            font-size: 32px;
             margin-bottom: 20px;
-            letter-spacing: 1px;
         }
 
-        /* Paragraph text adjustments */
-        .home p { 
-            font-size: 18px; 
+        .home p {
+            font-size: 18px;
             line-height: 1.6;
             margin: 0;
             color: #e0e0e0;
         }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-greeting {
+                margin-right: 0;
+                padding-left: 0;
+                margin-bottom: 10px;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+
+            .content-container {
+                padding: 20px;
+            }
+
+            .about-image {
+                height: 220px;
+            }
+
+            .home h1 {
+                font-size: 26px;
+            }
+
+            .home p {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-    <nav> 
-        <a href="Home.html">🏭Home</a> 
-        <a href="About.html">❓About</a> 
-        <a href="Products.html">📦Products</a> 
-        <a href="Contact.html">💬Contact</a> 
-        <a href="Films.html">&#x1F3A5;Films</a> 
-		<!-- Redirects the user back to the login page -->
-        <a href="Login.html">&#x1F6AA;Logout</a> 
-		
-    </nav> 
+    <nav>
 
-    <div class="home"> 
-        <!-- New semantic wrapping container -->
-        <div class="content-container"> 
-            <h1>🤝About Us🤝</h1> 
-            <p>Welcome! Our Shop allows users to explore products and enjoy film entertainment. 
-                We aim to provide a simple and enjoyable website experience for everyone. Explore 
-                curated products and dive into cinematic entertainment, all in one seamless space. 
-                We design every feature to ensure your journey is effortless, engaging, and tailored just for you. .</p> 
-        </div> 
+        <div class="nav-greeting">
+            🤝 About Us 🤝
+        </div>
+
+        <a href="Home.html">🏭 Home</a>
+        <a href="About.html">❓ About</a>
+        <a href="Products.html">📦 Products</a>
+        <a href="Contact.html">💬 Contact</a>
+        <a href="Films.html">🎥 Films</a>
+        <a href="Login.html">🚪 Logout</a>
+
+    </nav>
+
+    <div class="home">
+
+        <div class="content-container">
+
+            <!-- ABOUT PICTURE -->
+            <img src="(6).jpg"
+                 alt="Our Shop and Film Entertainment"
+                 class="about-image">
+
+            <div class="image-caption">
+                Our Shop and Film Entertainment
+            </div>
+
+            <h1>Welcome Sir/Ma'am!</h1>
+
+            <p>
+                Our Shop allows users to explore products and enjoy film
+                entertainment. We aim to provide a simple and enjoyable
+                website experience for everyone. Explore curated products
+                and dive into cinematic entertainment, all in one seamless
+                space. We design every feature to ensure your journey is
+                effortless, engaging, and tailored just for you.
+            </p>
+
+            <br>
+
+            <p>
+                By blending the art of visual storytelling with the
+                curation of premium goods, we invite you to discover items
+                that elevate your daily routines. Whether you are searching
+                for the exact aesthetic captured in your favorite scene or
+                looking to upgrade your home viewing setup, our platform
+                serves as your ultimate lifestyle conduit.
+            </p>
+
+            <br>
+
+            <p>
+                We believe that shopping and entertainment should not exist
+                in isolation, but rather collaborate to spark inspiration,
+                simplify discovery, and bring the magic of the silver screen
+                directly into your hands.
+            </p>
+
+        </div>
+
     </div>
 
-</body> 
+</body>
 </html>
-
