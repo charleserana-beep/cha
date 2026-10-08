@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body { 
+            margin: 0; 
+            font-family: Arial, sans-serif; 
+            background: #f4f4f4; 
+        }
+        
+        nav { 
+            background: orange; 
+            padding: 18px; 
+            text-align: center; 
+        }
+        
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            margin: 15px; 
+            font-weight: bold; 
+        }
+
+        /* Updated container with background image and overlay */
+        .home { 
+            min-height: calc(100vh - 56px); /* Adjusts for the navbar height */
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            /* Adds a dark overlay blend over a cinematic background image */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('lam).jpg') no-repeat center center/cover;
+            color: white; 
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Stylized white transparent box containing the text */
+        .content-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 800px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        /* Title positioned squarely above the paragraph */
+        .home h1 { 
+            font-size: 45px; 
+            margin-top: 0;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        /* Paragraph text adjustments */
+        .home p { 
+            font-size: 18px; 
+            line-height: 1.6;
+            margin: 0;
+            color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav> 
+        <a href="Home.html">🏭Home</a> 
+        <a href="About.html">❓About</a> 
+        <a href="Products.html">📦Products</a> 
+        <a href="Contact.html">💬Contact</a> 
+        <a href="Films.html">&#x1F3A5;Films</a>
+           <!-- Redirects the user back to the login page -->
+        <a href="Login.html">&#x1F6AA;Logout</a> 
+    </nav> 
+
+    <div class="home"> 
+        <!-- New semantic wrapping container -->
+        <div class="content-container"> 
+            <h1>👋Hi Welcome To MY Shop!</h1> 
+            <p>Discovering new lifestyle products and immersing yourself in your favorite films represent 
+			two of modern life's greatest sensory pleasures, effortlessly intertwining to cultivate an elevated everyday experience. 
+			Cinema acts as a dynamic, living lookbook where meticulously designed sets and iconic character styles inspire our personal tastes,
+			turning on-screen aesthetics into tangible reality. By integrating premium audiovisual technology, curated home decor, and artisanal comforts into our viewing spaces,
+			the simple act of watching a movie transforms into a luxurious ritual. Ultimately, this seamless synergy between digital entertainment and physical consumer discovery enhances our
+			surroundings, allowing us to mirror the curated beauty of film within our own lives.</p> 
+        </div> 
+    </div>
+
+</body> 
+</html>
+

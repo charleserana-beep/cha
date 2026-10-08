@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Films</title>
+    <style>
+        body { 
+            margin: 0; 
+            font-family: Arial;
+            /* Added matching background image properties below */
+            background: url('100.jpg') no-repeat center center fixed; 
+            background-size: cover;
+            color: white; 
+        }
+        nav { background: orange; padding: 18px; text-align: center; }
+        nav a {
+            color: white; text-decoration: none;
+            margin: 15px; font-weight: bold;
+        }
+        .films { 
+            padding: 50px; 
+            text-align: center; 
+            /* Added dark semi-transparent overlay to match film theme and keep text clear */
+            background-color: rgba(0, 0, 0, 0.7);
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex; justify-content: center;
+            gap: 25px; flex-wrap: wrap;
+        }
+        .film {
+            width: 230px; background: #292929;
+            padding-bottom: 20px; border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Added slight shadow depth */
+        }
+        .film img {
+            width: 100%; height: 300px; object-fit: cover;
+        }
+        .watch {
+            background: #e50914; color: white;
+            border: none; padding: 10px 20px;
+            border-radius: 5px; cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s ease;
+        }
+        .watch:hover {
+            background: #b80710; /* Darker red hover effect */
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <a href="Home.html">🏭Home</a> 
+        <a href="About.html">❓About</a> 
+        <a href="Products.html">📦Products</a> 
+        <a href="Contact.html">💬Contact</a> 
+        <a href="Films.html">&#x1F3A5;Films</a> 
+	<!-- Redirects the user back to the login page -->
+        <a href="Login.html">&#x1F6AA;Logout</a> 
+</nav>
+<div class="films">
+    <h1> 🎬Film Viewing</h1>
+    <div class="container">
+        <div class="film">
+            <img src="2.jpg">
+            <h2> Master chief Film</h2> <!-- Fixed typo 'cheif' -> 'chief' -->
+            <p> Ratatouille • 2015</p>
+            <button class="watch">👀Watch</button>
+        </div>
+        <div class="film">
+            <img src="3.jpg">
+            <h2>Animated Film</h2>
+            <p> Cloudy with a Chance of Meatballs • 2009</p>
+            <button class="watch">👀Watch</button>
+        </div>
+        <div class="film">
+            <img src="4.jpg">
+            <h2>Animated Film</h2>
+            <p>Foodiverse Foodie besties on a mission • 2024</p> <!-- Fixed typo 'Fodiverse Foddie' -> 'Foodiverse Foodie' -->
+            <button class="watch">👀Watch</button>
+        </div>
+        <div class="film">
+            <img src="15.jpg">
+            <h2>Korean Film</h2>
+            <p>Cooking God • 2021</p>
+            <button class="watch">👀Watch</button>
+        </div>
+        <div class="film">
+            <img src="16.jpg">
+            <h2>Korean Film</h2>
+            <p>The return of the lost chief • 2025</p> <!-- Fixed typo 'fo the lost cheif' -> 'of the lost chief' -->
+            <button class="watch">👀Watch</button>
+        </div>
+		
+    </div>
+</div>
+</body>
+</html>
