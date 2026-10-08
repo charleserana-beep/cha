@@ -6,11 +6,15 @@
     <title>Home</title>
 
     <style>
-        body {
+        /* Force body to span the full width and height of the screen */
+        html, body {
             margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
             font-family: Arial, sans-serif;
             background: #f4f4f4;
-            overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+            overflow-x: hidden; /* Prevent horizontal side scrolling */
         }
 
         nav {
@@ -20,6 +24,9 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
+            height: 60px;
+            box-sizing: border-box;
+            width: 100%;
         }
 
         nav a {
@@ -45,6 +52,7 @@
             nav {
                 flex-direction: column;
                 gap: 10px;
+                height: auto;
             }
 
             .nav-greeting {
@@ -54,68 +62,84 @@
             }
         }
 
+        /* Hero container spans full layout area and keeps background picture */
         .home {
-            min-height: calc(100vh - 56px);
+            min-height: calc(100vh - 60px);
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
-
-            /* BACKGROUND PICTURE KEPT EXACTLY THE SAME */
+            
+            /* BACKGROUND PICTURE PRESERVED */
             background:
                 linear-gradient(rgba(0, 0, 0, 0.7),
                 rgba(0, 0, 0, 0.7)),
                 url('lam).jpg') no-repeat center center/cover;
-
-            color: white;
-            /* Removed standard side paddings so container goes edge-to-edge */
-            padding: 40px 0; 
+            
             box-sizing: border-box;
         }
 
-        /* Glass box stretches to the absolute full width of the screen */
+        /* Glass container expanded to 100% full screen width over the background picture */
         .content-container {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            padding: 40px 10%; /* Stretches text but leaves 10% breathing room on inner sides */
+            /* Semi-transparent glass background to let the background picture show through */
+            background: rgba(255, 255, 255, 0.08); 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             
-            /* Full width settings */
+            /* Force absolute 100% full width across the display screen */
             width: 100%; 
-            max-width: 100%; 
+            min-height: calc(100vh - 60px);
             border-left: none;
             border-right: none;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 0; /* Square edges look cleaner for full-width designs */
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             
+            /* Center align everything cleanly inside the massive banner layout */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 10%; /* Provides 10% breathing room on the extreme edges */
             box-sizing: border-box;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         }
 
-        /* Shop picture expands nicely within the full-width strip */
+        /* Picture stretches nicely across the widescreen interface */
         .home-picture {
             width: 100%;
-            max-width: 1100px; /* Wider limit to fit a full-screen layout */
-            height: 400px;
+            max-width: 1100px; /* Enhanced width limit to suit a full-screen block */
+            height: 35vh; /* Dynamically sizes to 35% of the screen height */
             object-fit: cover;
             border-radius: 12px;
-            border: 2px solid rgba(255, 255, 255, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.4);
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-            margin-bottom: 25px;
-        }
-
-        .home h1 {
-            font-size: 32px;
             margin-bottom: 20px;
         }
 
+        .image-caption {
+            color: #ffb84d;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 5px;
+        }
+
+        .home h1 {
+            font-size: clamp(26px, 4.5vh, 42px);
+            margin: 0 0 25px 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Paragraph spreads wider across the modern landscape screen canvas */
         .home p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin: 0 auto;
-            color: #e0e0e0;
-            max-width: 1000px; /* Keeps text paragraphs readable on massive monitors */
+            font-size: clamp(16px, 2.2vh, 20px); 
+            line-height: 1.7;
+            margin: 0 auto 20px auto;
+            color: #f0f0f0;
+            max-width: 1200px; /* Expanded limit to use up the horizontal layout width */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         @media (max-width: 768px) {
@@ -125,14 +149,6 @@
 
             .home-picture {
                 height: 220px;
-            }
-
-            .home h1 {
-                font-size: 26px;
-            }
-
-            .home p {
-                font-size: 16px;
             }
         }
     </style>
@@ -177,8 +193,6 @@
                 simple act of watching a movie transforms into a luxurious
                 ritual.
             </p>
-
-            <br>
 
             <p>
                 Ultimately, this seamless synergy between digital
