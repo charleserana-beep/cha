@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            /* BACKGROUND PICTURE KEPT EXACTLY THE SAME */
+            background: url('28.jpg') no-repeat center center fixed;
+            background-size: cover;
+            overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+        }
+        
+        nav {
+            background: orange;
+            padding: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Stretches the product overlay area to the absolute full width and full height */
+        .products {
+            padding: 40px 10%; /* Matches the 10% edge spacing from the home page */
+            text-align: center;
+            box-sizing: border-box;
+            width: 100%;
+            min-height: calc(100vh - 56px); /* Forces it to fill the entire vertical screen below nav */
+            
+            /* Modern glass overlay style matching your home page theme */
+            background: rgba(255, 255, 255, 0.15); 
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .products h1 {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            margin-bottom: 20px;
+        }
+        
+        .products h1:nth-of-type(2) {
+            font-size: clamp(16px, 2.5vh, 22px);
+            font-weight: normal;
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            line-height: 1.5;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            max-width: 1400px; /* Limits container width on huge monitors */
+            margin: 0 auto;
+        }
+        
+        .card {
+            background: white;
+            width: 220px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px); /* Simple premium bounce effect on hover */
+        }
+        
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+        
+        .card h2 {
+            color: #333;
+            margin: 15px 0;
+            font-size: 24px;
+        }
+        
+        .card h2::before {
+            content: "₱"; /* Adds a currency symbol placeholder before the price values */
+            font-size: 18px;
+            margin-right: 2px;
+        }
+        
+        button {
+            background: #111;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            transition: background 0.2s;
+        }
+        
+        button:hover {
+            background: orange; /* Color change feedback when buying */
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .products {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="home.html">🏭Home</a>
+        <a href="about.html">❓About</a>
+        <a href="products.html">📦Products</a>
+        <a href="contact.html">💬Contact</a>
+        <a href="films.html">&#x1F3A5;Films</a>
+        <a href="Login.html">&#x1F6AA;Logout</a> 
+    </nav>
+    
+    <div class="products">
+        <h1>🙌Our Products🙌</h1>
+        <h1>Buy now and enjoy the foods together with your family and friends watching movies🍿.</h1>
+        
+        <div class="container">
+            <div class="card">
+                <img src="34.jpg">
+                <h2>149</h2>
+                <button>🛒Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="12.jpg">
+                <h2>399</h2>
+                <button>🛒Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="1.jpg">
+                <h2>379</h2>
+                <button>🛒Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="10.jpg">
+                <h2>349</h2>
+                <button>🛒Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="45.jpg">
+                <h2>459</h2>
+                <button>🛒Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="46.jpg">
+                <h2>499</h2>
+                <button>🛒Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="44.jpg">
+                <h2>375</h2>
+                <button>🛒Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="32.jpg">
+                <h2>550</h2>
+                <button>🛒Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="(1).jpg">
+                <h2>220</h2>
+                <button>🛒Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="56.jpg">
+                <h2>345</h2>
+                <button>🛒Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="images (1).jpg">
+                <h2>679</h2>
+                <button>🛒Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="images (2).jpg">
+                <h2>220</h2>
+                <button>🛒Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="images (4).jpg">
+                <h2>600</h2>
+                <button>🛒Buy Now</button>
+            </div>
+            <div class="card">
+                <img src="images (5).jpg">
+                <h2>750</h2>
+                <button>🛒Buy Now</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
